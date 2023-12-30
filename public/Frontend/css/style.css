@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700&display=swap');
+body{font-family: 'Mulish', sans-serif;}
+:root{
+
+    --background-color:#fff;
+    --text-color:#000;
+    --border-color:rgba(0,0,0,35%);
+}
+
+
+@media (min-width: 1200px)
+{
+.container {
+    width: 1600px;
+    max-width: 100%;
+}
+}
+
+.main-header{}
+.main-header .header-top {
+    margin-top: 20px;float:left;width: 100%;
+}
+.main-header .logo{width: 16%;float:left;}
+.main-header .search-bar-block{float:left;width:65%;position: relative;}
+.main-header .search-bar-block input.search-input {
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    position: relative;z-index: 1;
+}
+.main-header .search-bar-block img {
+    position: absolute;
+    top: 11px;
+    right: 14px;
+    width: 20px;
+    z-index: 1;
+}
+.navbar{float:left;width:100%;}
+#myNavbar ul li a{text-transform: uppercase;color:var(--text-color);font-size:16px;}
+.colmd1{width:13%;}
+#myNavbar ul li a:hover{background-color: var(--background-color);}
+.slick-slide img.img-responsive{width: calc(100% - 10px);}
+.slick-dots li button:before{font-size: 45px;}
+.slick-arrow{display: none!important;}
+.section-block {
+    padding: 20px 0px;
+}

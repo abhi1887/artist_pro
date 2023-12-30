@@ -1,0 +1,28 @@
+[14-Aug-2023 23:24:33 Asia/Kolkata] PHP Fatal error:  Unparenthesized `a ? b : c ? d : e` is not supported. Use either `(a ? b : c) ? d : e` or `a ? b : (c ? d : e)` in /home1/a16127sx/fashion.puneetchawla.in/storage/framework/views/1a4f1d573646fda021ed5df2503e460f6d6b9e5e.php on line 122
+[15-Aug-2023 00:32:08 Asia/Kolkata] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home1/a16127sx/fashion.puneetchawla.in/app/Http/Controllers/Frontend/HomeController.php on line 105
+[16-Aug-2023 17:51:49 UTC] PHP Warning:  require(/home1/a16127sx/fashion.puneetchawla.in/vendor/composer/../../app/Helpers/Helper.php): Failed to open stream: No such file or directory in /home1/a16127sx/fashion.puneetchawla.in/vendor/composer/autoload_real.php on line 55
+[16-Aug-2023 17:51:49 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/a16127sx/fashion.puneetchawla.in/vendor/composer/../../app/Helpers/Helper.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/a16127sx/fashion.puneetchawla.in/vendor/composer/autoload_real.php:55
+Stack trace:
+#0 /home1/a16127sx/fashion.puneetchawla.in/vendor/composer/autoload_real.php(38): composerRequire8b794d4de67f5c2e14714dc2f7eaed1b('8fde5feda9697fe...', '/home1/a16127sx...')
+#1 /home1/a16127sx/fashion.puneetchawla.in/vendor/autoload.php(25): ComposerAutoloaderInit8b794d4de67f5c2e14714dc2f7eaed1b::getLoader()
+#2 /home1/a16127sx/fashion.puneetchawla.in/public/index.php(34): require('/home1/a16127sx...')
+#3 {main}
+  thrown in /home1/a16127sx/fashion.puneetchawla.in/vendor/composer/autoload_real.php on line 55
+[16-Aug-2023 17:52:41 UTC] PHP Warning:  require(/home1/a16127sx/fashion.puneetchawla.in/vendor/composer/../../app/Helpers/Helper.php): Failed to open stream: No such file or directory in /home1/a16127sx/fashion.puneetchawla.in/vendor/composer/autoload_real.php on line 55
+[16-Aug-2023 17:52:41 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/a16127sx/fashion.puneetchawla.in/vendor/composer/../../app/Helpers/Helper.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/a16127sx/fashion.puneetchawla.in/vendor/composer/autoload_real.php:55
+Stack trace:
+#0 /home1/a16127sx/fashion.puneetchawla.in/vendor/composer/autoload_real.php(38): composerRequire8b794d4de67f5c2e14714dc2f7eaed1b('8fde5feda9697fe...', '/home1/a16127sx...')
+#1 /home1/a16127sx/fashion.puneetchawla.in/vendor/autoload.php(25): ComposerAutoloaderInit8b794d4de67f5c2e14714dc2f7eaed1b::getLoader()
+#2 /home1/a16127sx/fashion.puneetchawla.in/public/index.php(34): require('/home1/a16127sx...')
+#3 {main}
+  thrown in /home1/a16127sx/fashion.puneetchawla.in/vendor/composer/autoload_real.php on line 55
+[16-Aug-2023 17:52:54 UTC] PHP Warning:  require(/home1/a16127sx/fashion.puneetchawla.in/vendor/composer/../../app/Helpers/Helper.php): Failed to open stream: No such file or directory in /home1/a16127sx/fashion.puneetchawla.in/vendor/composer/autoload_real.php on line 55
+[16-Aug-2023 17:52:54 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/a16127sx/fashion.puneetchawla.in/vendor/composer/../../app/Helpers/Helper.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/a16127sx/fashion.puneetchawla.in/vendor/composer/autoload_real.php:55
+Stack trace:
+#0 /home1/a16127sx/fashion.puneetchawla.in/vendor/composer/autoload_real.php(38): composerRequire8b794d4de67f5c2e14714dc2f7eaed1b('8fde5feda9697fe...', '/home1/a16127sx...')
+#1 /home1/a16127sx/fashion.puneetchawla.in/vendor/autoload.php(25): ComposerAutoloaderInit8b794d4de67f5c2e14714dc2f7eaed1b::getLoader()
+#2 /home1/a16127sx/fashion.puneetchawla.in/public/index.php(34): require('/home1/a16127sx...')
+#3 {main}
+  thrown in /home1/a16127sx/fashion.puneetchawla.in/vendor/composer/autoload_real.php on line 55
+[19-Aug-2023 14:03:03 Asia/Kolkata] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home1/a16127sx/fashion.puneetchawla.in/storage/framework/views/b31a4643aff23ba83ee61352071719ceb5718c94.php on line 102
+[07-Nov-2023 19:47:27 Asia/Kolkata] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 266342400 bytes) in /home1/a16127sx/fashion.puneetchawla.in/app/Http/Controllers/DealController.php on line 128

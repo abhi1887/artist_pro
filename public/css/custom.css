@@ -1,0 +1,133 @@
+body,
+html {
+	height: 100%;
+}
+/* workaround modal-open padding issue */
+
+body.modal-open {
+	padding-right: 0 !important;
+}
+
+#sidebar {
+	padding-left: 0;
+}
+
+
+/*
+ * Off Canvas at medium breakpoint
+ * --------------------------------------------------
+ */
+
+@media screen and (max-width: 48em) {
+	.row-offcanvas {
+		position: relative;
+		-webkit-transition: all 0.25s ease-out;
+		-moz-transition: all 0.25s ease-out;
+		transition: all 0.25s ease-out;
+	}
+	.row-offcanvas-left .sidebar-offcanvas {
+		left: -33%;
+	}
+	.row-offcanvas-left.active {
+		left: 33%;
+		margin-left: -6px;
+	}
+	.sidebar-offcanvas {
+		position: absolute;
+		top: 0;
+		width: 33%;
+		height: 100%;
+	}
+}
+/*
+ * Off Canvas wider at sm breakpoint
+ * --------------------------------------------------
+ */
+
+@media screen and (max-width: 34em) {
+	.row-offcanvas-left .sidebar-offcanvas {
+		left: -45%;
+	}
+	.row-offcanvas-left.active {
+		left: 45%;
+		margin-left: -6px;
+	}
+	.sidebar-offcanvas {
+		width: 45%;
+	}
+}
+
+.card {
+	overflow: hidden;
+}
+
+.card-block .rotate {
+	z-index: 8;
+	float: right;
+	height: 100%;
+}
+
+.card-block .rotate i {
+	color: rgba(20, 20, 20, 0.15);
+	position: absolute;
+	left: 0;
+	left: auto;
+	right: -10px;
+	bottom: 0;
+	display: block;
+	-webkit-transform: rotate(-44deg);
+	-moz-transform: rotate(-44deg);
+	-o-transform: rotate(-44deg);
+	-ms-transform: rotate(-44deg);
+	transform: rotate(-44deg);
+}
+
+
+.error-text{
+	color: red;
+}
+
+.bottom-line{
+	border-bottom: 1px solid black;
+}
+.fas{
+	float: right !important;
+    color: red !important;
+    cursor: pointer !important;
+}
+
+#reset-risk, #reset-correlation{
+	cursor:pointer;
+	position: relative;
+    left: -40px;
+    float: right;
+	font-size: small
+}
+
+.added-list-area{
+	height: 200px;
+    overflow-y: auto;
+}
+
+.list-area{
+	max-height: 300px;
+}
+
+.data-table-area{
+	max-height: 550px;
+	border: 1px solid transparent;
+}
+
+.data-table-area:hover{
+	border: 1px solid #000;
+}
+.bg-gradient-primary {
+    background-color: #606060;
+    background-image: linear-gradient(180deg,#606060 10%,#606060 100%);
+    background-size: cover;
+}
+
+.multiselect-dropdown .placeholder {
+    background-color: transparent;
+    color: black !important;
+}

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700&display=swap');
+body{font-family: 'Mulish', sans-serif;}
+@import "mixin";
+//varaible
+//opertors
+//nesting
+//mixing
+//parameters
+//paritials
+
+$bg-color:#f00;
+
+h1{background-color: $bg-color;font-size: 10rem+10rem;}
+ul{
+    list-style-type: disc;
+    
+    li{
+        float:left;
+        &:hover{color:#000;}
+        a{color:#f00;}
+    }
+
+   
+    
+    }
+// @mixin mystyle($part1){
+// font-size: 20rem;
+// color:#f00;
+// font-weight: 700;
+// letter-spacing: $part1;
+
+// }
+.main_header{
+    @include mystyle(0.3rem);
+}
