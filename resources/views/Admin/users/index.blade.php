@@ -35,11 +35,10 @@
                             </td>
                             <td class="text-center">
                                 @if (!$user->hasRole('vendor'))
-                                <form action="{{ route('users.destroy', $user->id) }}" method="post"
-                                    style="display: inline-block">
+                                <form action="{{ route('users.destroy', $user->id) }}" method="post" id="deleteForm" style="display: inline-block">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                                    <button class="btn btn-danger btn-sm" type="button" onclick="confirmDelete()">Delete</button>
                                 </form>
                                 @endif
                             </td>
@@ -97,8 +96,8 @@
                 data: data,
                 success: function(response) {
                     console.log(response);
-                    if(response.html != '') {
-                        $('#commentContent').html(response.html);
+                    if(response != '') {
+                        $('#commentContent').html(response);
                         $('#commentModal').modal('show');
                     }
                     $("#pageloader").fadeOut();
@@ -108,7 +107,15 @@
                     $("#pageloader").fadeOut();
                 }
             });
-
         });
+
+        function confirmDelete() {
+            var result = confirm("Are you sure you want to delete this user?");
+            if (result) {
+                $('#deleteForm').submit();
+            } else {
+                return false;
+            }
+        }
     </script>
 @endsection

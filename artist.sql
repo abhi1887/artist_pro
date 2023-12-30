@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2023 at 07:14 PM
+-- Generation Time: Dec 30, 2023 at 02:23 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -32,21 +32,23 @@ CREATE TABLE `comments` (
   `user_id` bigint(20) NOT NULL,
   `comment` text DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `comments`
 --
 
-INSERT INTO `comments` (`id`, `user_id`, `comment`, `created_at`, `updated_at`) VALUES
-(1, 2, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum! Provident similique accusantium nemo autem.', '2023-12-28 18:29:27', '2023-12-28 18:39:47'),
-(2, 2, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum! Provident similique accusantium nemo autem.', '2023-12-28 18:29:27', '2023-12-28 18:39:47'),
-(3, 2, 'test comment', '2023-12-29 07:53:20', '2023-12-29 07:53:20'),
-(4, 2, 'new comment', '2023-12-29 08:02:48', '2023-12-29 08:02:48'),
-(5, 2, 'extra comment', '2023-12-29 08:07:14', '2023-12-29 08:07:14'),
-(6, 2, 'qwertyuio', '2023-12-29 08:13:36', '2023-12-29 08:13:36'),
-(7, 2, 'jnkjnjbbibi kjnnjjnj j jnjnonj jnononon   jnnonononojnkjnin  ijnjnjnnj', '2023-12-29 08:14:33', '2023-12-29 08:14:33');
+INSERT INTO `comments` (`id`, `user_id`, `comment`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 2, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum! Provident similique accusantium nemo autem.', '2023-12-28 18:29:27', '2023-12-30 13:18:11', NULL),
+(2, 2, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum! Provident similique accusantium nemo autem.', '2023-12-28 18:29:27', '2023-12-30 13:18:11', NULL),
+(3, 2, 'test comment', '2023-12-29 07:53:20', '2023-12-30 13:18:11', NULL),
+(4, 2, 'new comment', '2023-12-29 08:02:48', '2023-12-30 13:18:11', NULL),
+(5, 2, 'extra comment', '2023-12-29 08:07:14', '2023-12-30 13:18:11', NULL),
+(6, 2, 'qwertyuio', '2023-12-29 08:13:36', '2023-12-30 13:18:11', NULL),
+(7, 2, 'jnkjnjbbibi kjnnjjnj j jnjnonj jnononon   jnnonononojnkjnin  ijnjnjnnj', '2023-12-29 08:14:33', '2023-12-30 13:18:11', NULL),
+(8, 2, 'test comment here', '2023-12-30 12:56:00', '2023-12-30 13:18:11', NULL);
 
 -- --------------------------------------------------------
 
@@ -390,16 +392,17 @@ CREATE TABLE `users` (
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `bio`, `image`, `address`, `phone`, `email_verified_at`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@admin.com', '$2y$10$BGUbi2tN7r15QNwvRgVdeOJJX5.aHalAy.qCL5Kc.JZlCVwkdfLsi', NULL, NULL, NULL, NULL, NULL, 'LecILfbuzAzTXi0pYygIc80Gs0aYzdldyVApbGHBJxmiGCtfqp9ZyXU6WyDj', '2023-03-29 20:52:54', '2023-09-20 06:35:57'),
-(2, 'Abhishek Kumar', 'abhishek1@gmail.com', '$2y$10$3oDkswepkNV9sglmx4iSl.kIb0lrMxraZ3yTG.EbWXPUm2yTbArFy', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum! Provident similique accusantium nemo autem.', '1703770705.png', NULL, NULL, NULL, NULL, '2023-04-15 14:37:43', '2023-12-28 13:38:25');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `bio`, `image`, `address`, `phone`, `email_verified_at`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Admin', 'admin@admin.com', '$2y$10$BGUbi2tN7r15QNwvRgVdeOJJX5.aHalAy.qCL5Kc.JZlCVwkdfLsi', NULL, NULL, NULL, NULL, NULL, 'H2Mztwy6jXig686lXoyM52YmLULsfjvBTZ4Ygqsc3RPjuA7la4tT2wnyJAtn', '2023-03-29 20:52:54', '2023-09-20 06:35:57', NULL),
+(2, 'Abhishek Kumar', 'abhishek1@gmail.com', '$2y$10$3oDkswepkNV9sglmx4iSl.kIb0lrMxraZ3yTG.EbWXPUm2yTbArFy', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\r\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\r\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\r\noptio, eaque rerum! Provident similique accusantium nemo autem.', '1703942590.png', NULL, NULL, NULL, NULL, '2023-04-15 14:37:43', '2023-12-30 13:23:10', NULL);
 
 --
 -- Indexes for dumped tables
@@ -522,7 +525,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`

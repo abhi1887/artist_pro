@@ -20,7 +20,7 @@ class AdminController extends Controller
     {
         $users = User::whereDoesntHave('roles', function ($query) {
                         $query->where('name', 'admin');
-                    })->get();
+                    })->whereNull('deleted_at')->get();
         return view('Admin.users.index', compact('users'))
                 ->with('i', ($request->input('page', 1) - 1) * 10);
     }

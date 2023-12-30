@@ -3,13 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\AdminCreateUserRequest;
-use App\Http\Requests\AdminUpdateUserRequest;
 use App\Models\User;
-use App\Models\Category;
-use App\Models\VendorCategory;
-use App\Models\VendorCategoryRelation;
-use Hash;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 
@@ -25,9 +20,8 @@ class UserController extends Controller
         try {
             $users = User::with('comments')->whereDoesntHave('roles', function ($query) {
                 $query->where('name', 'admin');
-            });
+            })->whereNull('deleted_at')->orderBy('id', 'DESC')->paginate(10);
 
-            $users = $users->orderBy('id', 'DESC')->paginate(10);
             return view('Admin.users.index', compact('users'))
                 ->with('i', ($request->input('page', 1) - 1) * 10);
         } catch (\Exception $e) {
@@ -109,7 +103,14 @@ class UserController extends Controller
     public function destroy($id)
     {
         try {
-            //
+            $user = User::where('id', $id)->whereNull('deleted_at')->first();
+
+            if (!$user) {
+                return redirect()->route('users.index')->with('error', 'User not found');
+            }
+            Comment::where('user_id', $id)->delete();
+            $user->delete();
+            return back()->with('success', 'User deleted successfully');
         } catch (\Exception $e) {
             return back()->with('error', $e->getMessage());
         }

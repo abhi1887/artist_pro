@@ -75,7 +75,6 @@ class ArtistController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'bio' => 'required',
-            'image' => 'required',
         ]);
         if ($validator->fails()) {
             return back()->withInput()->withErrors($validator->errors());
@@ -90,6 +89,16 @@ class ArtistController extends Controller
                 $files->move('user_images/', $image);
                 $fileOriginalName = $files->getClientOriginalName();
                 $user->image = $image;
+            }
+            else {
+                if(empty($user->image)) {
+                    $validator = Validator::make($request->all(), [
+                        'image' => 'required',
+                    ]);
+                    if ($validator->fails()) {
+                        return back()->withInput()->withErrors($validator->errors());
+                    }
+                }
             }
 
             $user->bio = $request->bio;
