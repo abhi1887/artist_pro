@@ -16,3 +16,24 @@
     position: absolute;
     top: 50%;
 }
+
+.artist_logo{
+    width:100px!important;
+    height:100px!important
+}
+
+.footer-copyrights {
+  background-color: #303030;
+  color: #fff;
+  padding: 10px 0px;
+  text-align: center;
+}
+
+footer {
+    clear: both;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+}

@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('Frontend/css/slick-theme.css') }}" />
+    <link href="{{ asset('common.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('Frontend/css/slick.css') }}" />
     <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('Frontend/css/commonstyle.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
@@ -57,11 +57,11 @@
             alt="processing..." />
     </div>
     <section class="main-header">
-        <div class="container">
-            <div class="header-top row" style="margin: auto; display: inline-flex;">
+        <div class="">
+            <div class="header-top row" style="margin: auto; display: inline-flex; width: 100%;">
                 <div class="logo col-lg-6 float-left" style="width: 100%!important;">
                     <a href="{{ route('shop') }}">
-                        <img src="{{ asset('Frontend/images/artist_logo.png') }}">
+                        <img src="{{ asset('Frontend/images/artist_logo.png') }}" class="artist_logo">
                     </a>
                 </div>
                 <div class="col-lg-6 float-right">
@@ -70,27 +70,6 @@
                     </ul>
                 </div>
             </div>
-
-            <nav class="navbar">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="col-md-2 colmd1"></div>
-                    <!-- <div class="col-md-9">
-                        <div class="collapse navbar-collapse" id="myNavbar">
-                            <ul class="nav navbar-nav navbar-center">
-                                <li class="active"><a href="{{-- route('login') --}}">Artist Login</a></li>
-                            </ul>
-                        </div>
-                    </div> -->
-                    <div class="col-md-1"></div>
-                </div>
-            </nav>
         </div>
     </section><!-- close header-->
 
