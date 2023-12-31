@@ -6,21 +6,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('Frontend/css/slick-theme.css') }}" />
-    <link href="{{ asset('common.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('Frontend/css/slick.css') }}" />
-    <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('Frontend/css/slick-theme.css')); ?>" />
+    <link href="<?php echo e(asset('common.css')); ?>" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('Frontend/css/slick.css')); ?>" />
+    <link href="<?php echo e(asset('css/toastr.min.css')); ?>" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script> -->
-    <script type="text/javascript" src="{{ asset('Frontend/js/slick.min.js') }}"></script>
+    <script type="text/javascript" src="<?php echo e(asset('Frontend/js/slick.min.js')); ?>"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    <script type="text/javascript" src="{{ asset('Frontend/js/custom.js') }}"></script>
+    <script type="text/javascript" src="<?php echo e(asset('Frontend/js/custom.js')); ?>"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoKHpwyIol5ZIcQueYSKF7SFz98fJkwo4&libraries=places">
     </script>
 
@@ -54,7 +54,7 @@
 }
     </style>
 
-    @yield('extra_css')
+    <?php echo $__env->yieldContent('extra_css'); ?>
 
 </head>
 
@@ -67,14 +67,14 @@
         <div class="">
             <div class="header-top row"  style="margin:auto; display: inline-flex; width: 100%;">
                 <div class="logo col-lg-4" style="width: 100%!important;">
-                    <a href="{{ route('shop') }}">
-                        <img src="{{ asset('Frontend/images/artist_logo.png') }}" class="artist_logo">
+                    <a href="<?php echo e(route('shop')); ?>">
+                        <img src="<?php echo e(asset('Frontend/images/artist_logo.png')); ?>" class="artist_logo">
                     </a>
                 </div>
              
                 <div class="col-lg-8">
                     <ul class="nav navbar-nav navbar-center" style="float: right!important">
-                        <li class="active"><a href="{{route('login')}}">Artist Login</a></li>
+                        <li class="active"><a href="<?php echo e(route('login')); ?>">Artist Login</a></li>
                     </ul>
                 </div>
             </div>
@@ -82,3 +82,4 @@
     </section><!-- close header-->
     
     <section class="main-section">
+<?php /**PATH D:\xampp\htdocs\artist_pro\resources\views/Frontend/layouts/header.blade.php ENDPATH**/ ?>

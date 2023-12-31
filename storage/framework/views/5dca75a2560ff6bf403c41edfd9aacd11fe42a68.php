@@ -56,3 +56,4 @@
 
     </body>
 </html>
+<?php /**PATH D:\xampp\htdocs\artist_pro\resources\views/Frontend/layouts/footer.blade.php ENDPATH**/ ?>
