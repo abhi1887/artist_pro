@@ -1,0 +1,1 @@
+<?php /**PATH C:\xampp7.4\htdocs\artist\resources\views/layouts/user_header.blade.php ENDPATH**/ ?>

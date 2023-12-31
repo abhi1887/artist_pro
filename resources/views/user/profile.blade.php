@@ -10,44 +10,58 @@
             Profile Details
         </div>
         <div class="card-body">
-            <form method="post" action="{{ route('profile.update', $user->id) }}" autocomplete="off"
-                enctype="multipart/form-data">
-                @csrf
-                @method('POST')
+
+            {!! Form::open([
+                'url' => route('profile.update', $user->id),
+                'method' => 'post',
+                'id' => 'profile',
+                'role' => 'form',
+                'class' => 'profile-form',
+                'enctype' => 'multipart/form-data',
+            ]) !!}
+
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" autocomplete="off" name="name" disabled 
-                        value="{{ old('name', $user->name) }}" />
+                    {!! Form::label('name', 'Name') !!}
+                    {!! Form::text('name', old('name', $user->name), ['class' => 'form-control', 'autocomplete' => 'off', 'disabled' => 'disabled']) !!}
                 </div>
+
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" autocomplete="off" name="email" disabled 
-                        value="{{ old('email', $user->email) }}" />
+                    {!! Form::label('email', 'Email') !!}
+                    {!! Form::text('email', old('email', $user->email), ['class' => 'form-control', 'autocomplete' => 'off', 'disabled' => 'disabled']) !!}
                 </div>
+
                 <div class="form-group">
-                    <label for="bio">User Bio</label>
-                    <textarea class="form-control" autocomplete="off" rows="4" name="bio" required>{{ old('bio', $user->bio) }} </textarea>
+                    {!! Form::label('bio', 'User Bio') !!}
+                    {!! Form::textarea('bio', old('bio', $user->bio), ['class' => 'form-control', 'autocomplete' => 'off', 'rows' => '4']) !!}
                     @if ($errors->has('bio'))
                         <div class="error-text">
                             {{ $errors->first('bio') }}
                         </div>
                     @endif
                 </div>
+
                 <div class="form-group">
-                    <label for="image">User Image</label>
-                    <input type="file" class="form-control" autocomplete="off" name="image" />
+                    {!! Form::label('image', 'User Image') !!}
+                    {!! Form::file('image', ['class' => 'form-control']) !!}
                     @if ($errors->has('image'))
                         <div class="error-text">
                             {{ $errors->first('image') }}
                         </div>
                     @endif
-                    @if (isset($user->id) && $user->image)
-                        <img src="{{ asset('/user_images/' . $user->image) }}" alt="{{ $user->image }}" class="image-item mt-3" width="200px" height="200px">
-                    @endif
                 </div>
-                <button type="submit"
-                    class="btn btn-primary">{{ __('Update user') }}</button>
-            </form>
+
+                @if (isset($user->id) && $user->image)
+                    <div class="form-group">
+                        {!! Form::image(asset('/user_images/' . $user->image), 'alt text', ['class' => 'image-item mt-3', 'width' => '200px', 'height' => '200px']) !!}
+                    </div>
+                @endif
+
+                <div class="form-group">
+                    {!! Form::submit(__('Update user'), ['class' => 'btn btn-primary']) !!}
+                </div>
+                
+            {!! Form::close() !!}
+
         </div>
     </div>
 @endsection

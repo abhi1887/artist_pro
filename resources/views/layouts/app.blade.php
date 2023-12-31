@@ -52,28 +52,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/multi-select/0.9.12/js/jquery.multi-select.min.js"></script>
-    <script src="{{ asset('js/multiselect-dropdown.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9QsliyLc6EHTHmCVBT2rmqBFLNQ7f0No&libraries=places">
-    </script>
-    <script src="{!! asset('tinymce/js/tinymce.min.js') !!}"></script>
-    <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
-
-    <script>
-        function initAutocomplete() {
-            var input = document.getElementById('address-input');
-            var options = {
-                types: ['geocode'],
-                componentRestrictions: {
-                    country: 'IN'
-                }
-            };
-
-            var autocomplete = new google.maps.places.Autocomplete(input, options);
-        }
-    </script>
-
 </head>
 
 <body>
@@ -102,7 +81,6 @@
     <script src="{{ asset('common.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="text/javascript" src="{{ asset('js/chosen.jquery.min.js') }}"></script>
     
     @yield('extra_script')

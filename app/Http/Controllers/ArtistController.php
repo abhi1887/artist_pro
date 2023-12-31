@@ -17,8 +17,12 @@ class ArtistController extends Controller
      */
     public function index()
     {
-        $user = User::find(Auth::id());
-        return view('user.profile', compact('user'));
+        try {
+            $user = User::find(Auth::id());
+            return view('user.profile', compact('user'));
+        } catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
     }
 
     /**

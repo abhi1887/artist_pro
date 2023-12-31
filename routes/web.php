@@ -33,7 +33,8 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('dashboard', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.home');
     Route::resource('roles', App\Http\Controllers\Admin\RoleController::class);
     Route::resource('users', App\Http\Controllers\Admin\UserController::class);
-    Route::post('get-comment', [App\Http\Controllers\Admin\AdminController::class, 'getComment'])->name('admin.get-comment');
+    Route::get('get-comment', [App\Http\Controllers\Admin\AdminController::class, 'getComment'])->name('admin.get-comment');
+    Route::post('delete-comment', [App\Http\Controllers\Admin\AdminController::class, 'deleteComment'])->name('admin.delete-comment');
 });
 
 Route::group(['middleware' => ['auth', 'vendor']], function () {

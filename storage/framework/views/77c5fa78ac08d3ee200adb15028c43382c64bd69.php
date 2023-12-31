@@ -1,18 +1,18 @@
-@extends('layouts.master')
-@section('content')
+<?php $__env->startSection('content'); ?>
     <div class="d-sm-flex align-items-center justify-content-between m-3">
         <h2 class="h3 mb-0 text-gray-800">Users</h2>
     </div>
 
     <div class="push-top ml-3">
 
-        @if (session()->get('success'))
+        <?php if(session()->get('success')): ?>
             <div class="alert alert-success">
-                {{ session()->get('success') }}
-            </div><br />
-        @endif
+                <?php echo e(session()->get('success')); ?>
 
-        @if(count($users) > 0)
+            </div><br />
+        <?php endif; ?>
+
+        <?php if(count($users) > 0): ?>
         <div class="table-responsive">
             <table class="table table-hover" id="usersTable">
                 <thead>
@@ -25,34 +25,36 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($users as $user)
+                    <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <td>{{ ++$i }}</td>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->bio }}</td>
+                            <td><?php echo e(++$i); ?></td>
+                            <td><?php echo e($user->name); ?></td>
+                            <td><?php echo e($user->bio); ?></td>
                             <td>
-                                <u style="cursor: pointer;" class="viewComment" data-id="{{ $user->id }}">{{ __('View Comments') }}</u>
+                                <u style="cursor: pointer;" class="viewComment" data-id="<?php echo e($user->id); ?>"><?php echo e(__('View Comments')); ?></u>
                             </td>
                             <td class="text-center">
-                                @if (!$user->hasRole('vendor'))
-                                    {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete', 'class' => 'deleteForm']) !!}
+                                <?php if(!$user->hasRole('vendor')): ?>
+                                    <?php echo Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete', 'class' => 'deleteForm']); ?>
+
                                         <button class="btn btn-danger btn-sm deleteUser" type="button">Delete</button>
-                                    {!! Form::close() !!}
-                                @endif
+                                    <?php echo Form::close(); ?>
+
+                                <?php endif; ?>
 
                             </td>
                         </tr>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </tbody>
             </table>
         </div>
-        @else
+        <?php else: ?>
         <div class="row">
             <div class="col-6">
                 <strong> No data found! </strong>
             </div>
         </div>
-        @endif
+        <?php endif; ?>
     </div>
 
     <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel" aria-hidden="true">
@@ -90,7 +92,7 @@
             });
 
             $.ajax({
-                url: "{{ url('/get-comment') }}",
+                url: "<?php echo e(url('/get-comment')); ?>",
                 method: 'get',
                 data: data,
                 success: function(response) {
@@ -133,7 +135,7 @@
             });
 
             $.ajax({
-                url: "{{ url('/delete-comment') }}",
+                url: "<?php echo e(url('/delete-comment')); ?>",
                 method: 'POST',
                 data: data,
                 success: function(response) {
@@ -158,4 +160,6 @@
             }
         });
     </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp7.4\htdocs\artist\resources\views/Admin/users/index.blade.php ENDPATH**/ ?>

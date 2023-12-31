@@ -10,22 +10,22 @@
     <meta name="author" content="">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
-    <title>{{ config('app.name', 'Artist') }}</title>
+    <title><?php echo e(config('app.name', 'Artist')); ?></title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/bootstrap-grid.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('admin/css/custom.css') }}" rel="stylesheet">
+    <link href="<?php echo e(asset('css/bootstrap.min.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('css/bootstrap-grid.min.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('css/sb-admin-2.min.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('css/toastr.min.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('admin/css/custom.css')); ?>" rel="stylesheet">
 
     <!-- Custom fonts for this template-->
-    <link href="{{ asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="<?php echo e(asset('admin/vendor/fontawesome-free/css/all.min.css')); ?>" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template-->
-    <link href="{{ asset('common.css') }}" rel="stylesheet">
+    <link href="<?php echo e(asset('common.css')); ?>" rel="stylesheet">
 
     <style>
         .nav-link {
@@ -34,16 +34,16 @@
     </style>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('admin/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="<?php echo e(asset('admin/vendor/jquery/jquery.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js')); ?>"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="{{ asset('admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    <script src="<?php echo e(asset('admin/vendor/jquery-easing/jquery.easing.min.js')); ?>"></script>
 
-    <script src="{{ asset('js/moment.min.js') }}"></script>
-    <script src="{{ asset('admin/js/sb-admin-2.min.js') }}" defer></script>
-    <script src="{{ asset('common.js') }}" defer></script>
+    <script src="<?php echo e(asset('js/moment.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('admin/js/sb-admin-2.min.js')); ?>" defer></script>
+    <script src="<?php echo e(asset('common.js')); ?>" defer></script>
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9QsliyLc6EHTHmCVBT2rmqBFLNQ7f0No&libraries=places"> </script>-->
     
     <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
@@ -60,7 +60,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        @include('layouts.sidebar')
+        <?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -70,18 +70,18 @@
             <div id="content">
 
                 <!-- Topbar -->
-                @include('layouts.header')
+                <?php echo $__env->make('layouts.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                @yield('content')
+                <?php echo $__env->yieldContent('content'); ?>
                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            {{-- @include('layouts.footer') --}}
+            
             <!-- End of Footer -->
 
         </div>
@@ -109,13 +109,14 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="{{ route('logout') }}"
+                    <a class="btn btn-primary" href="<?php echo e(route('logout')); ?>"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         Logout
                     </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
+                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                        <?php echo e(csrf_field()); ?>
+
                     </form>
                 </div>
             </div>
@@ -125,3 +126,4 @@
 </body>
 
 </html>
+<?php /**PATH C:\xampp7.4\htdocs\artist\resources\views/layouts/master.blade.php ENDPATH**/ ?>

@@ -46,7 +46,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AdminCreateUserRequest $request)
+    public function store(Request $request)
     {
         try {
             //
@@ -85,7 +85,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(AdminUpdateUserRequest $request, $id)
+    public function update(Request $request, $id)
     {
         try {
             //
