@@ -54,5 +54,35 @@
             </div>            
         </footer>
 
+        <script>
+            $(document).ready(function () {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 10) {
+                       
+                        $('.logo').css({
+                            'width': '100px',
+                            'height': 'auto',
+                            'margin': '10px',
+                            'padding': '0'
+                        });
+                    } else {
+                        $('.logo').css({
+                            'width': '100%',
+                            'height': 'auto',
+                            'margin': '0',
+                            'padding': '20px'
+                        });
+                        $('.logo img').css({
+                            'position': 'fixed',
+                            'z-index': '1'
+                        });
+                        $('.udata').css({
+                            'padding-top': '150px',
+                        });
+                    }
+                });
+            });
+        </script>
+
     </body>
 </html>

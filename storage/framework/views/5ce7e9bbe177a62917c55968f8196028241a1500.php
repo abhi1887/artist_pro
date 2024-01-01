@@ -4,7 +4,8 @@
 <head>
     <title>Welcome to Artist</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -45,6 +46,29 @@
             position: absolute;
             top: 50%;
         }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #myHeader {
+            width: 100%;
+            transition: background-color 0.5s, height 0.5s;
+        }
+
+        .header-top {
+            box-sizing: border-box;
+        }
+
+        .logo {
+            transition: width 0.5s, height 0.5s, margin 0.5s, padding 0.5s;
+        }
+
+        .logo img {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 
     <?php echo $__env->yieldContent('extra_css'); ?>
@@ -56,22 +80,6 @@
         <img src="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif"
             alt="processing..." />
     </div>
-    <section class="main-header">
-        <div class="">
-            <div class="header-top row" style="margin: auto; display: inline-flex; width: 100%;">
-                <div class="logo col-lg-6 float-left" style="width: 100%!important;">
-                    <a href="<?php echo e(route('shop')); ?>">
-                        <img src="<?php echo e(asset('Frontend/images/artist_logo.png')); ?>" class="artist_logo">
-                    </a>
-                </div>
-                <div class="col-lg-6 float-right">
-                    <ul class="nav navbar-nav navbar-center" style="float: right!important">
-                        <li class="active"><a href="<?php echo e(route('login')); ?>">Artist Login</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section><!-- close header-->
-
+        
     <section class="main-section">
 <?php /**PATH C:\xampp7.4\htdocs\artist\resources\views/Frontend/layouts/header.blade.php ENDPATH**/ ?>

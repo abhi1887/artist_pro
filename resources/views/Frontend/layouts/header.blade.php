@@ -4,7 +4,8 @@
 <head>
     <title>Welcome to Artist</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -45,13 +46,29 @@
             position: absolute;
             top: 50%;
         }
-   
-#myHeader {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background:red;
-}
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #myHeader {
+            width: 100%;
+            transition: background-color 0.5s, height 0.5s;
+        }
+
+        .header-top {
+            box-sizing: border-box;
+        }
+
+        .logo {
+            transition: width 0.5s, height 0.5s, margin 0.5s, padding 0.5s;
+        }
+
+        .logo img {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 
     @yield('extra_css')
@@ -63,22 +80,5 @@
         <img src="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif"
             alt="processing..." />
     </div>
-    <section class="main-header" id = "myHeader">
-        <div class="">
-            <div class="header-top row"  style="margin:auto; display: inline-flex; width: 100%;">
-                <div class="logo col-lg-4" style="width: 100%!important;">
-                    <a href="{{ route('shop') }}">
-                        <img src="{{ asset('Frontend/images/artist_logo.png') }}" class="artist_logo">
-                    </a>
-                </div>
-             
-                <div class="col-lg-8">
-                    <ul class="nav navbar-nav navbar-center" style="float: right!important">
-                        <li class="active"><a href="{{route('login')}}">Artist Login</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section><!-- close header-->
-    
+        
     <section class="main-section">
