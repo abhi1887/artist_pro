@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('Frontend/css/slick.css') }}" />
     <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script> -->
@@ -47,28 +47,23 @@
             top: 50%;
         }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
+        footer {
+        background-color: #555;
+        color: white;
+        padding: 15px;
         }
 
-        #myHeader {
-            width: 100%;
-            transition: background-color 0.5s, height 0.5s;
+        .icon-size{
+        font-size:25px;
+        padding:5px;
+        color:#fff;
         }
-
-        .header-top {
-            box-sizing: border-box;
+        .footer-p{
+        padding:0px 25px;
         }
-
-        .logo {
-            transition: width 0.5s, height 0.5s, margin 0.5s, padding 0.5s;
-        }
-
-        .logo img {
-            max-width: 100%;
-            height: auto;
-        }
+        .mt-10{
+            margin-top:10px;
+        } 
     </style>
 
     @yield('extra_css')
@@ -80,5 +75,29 @@
         <img src="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif"
             alt="processing..." />
     </div>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="{{ route('shop') }}" style="padding: 10px 15px">
+                <img src="{{ asset('Frontend/images/artist_logo.png') }}" class="artist_logo">
+            </a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">Messages</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="{{route('login')}}">Artist Login</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
         
     <section class="main-section">

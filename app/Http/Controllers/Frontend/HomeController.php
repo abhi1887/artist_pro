@@ -39,12 +39,8 @@ class HomeController extends Controller
             $newCommentID = $comment->id;
             $date = date('d/m/Y', strtotime($comment->created_at));
 
-            $html = '<div class="row" style="background:#fff; padding: 5px; margin: 3px 0; font-size: small;">
-                        <div class="col-12">
-                            <p> Review Date  '.$date.'</p>
-                            <p>'.$comment->comment.'</p>
-                        </div>
-                    </div>';
+            $html = '<p> Review Date  '.$date.'</p>
+                    <p>'.$comment->comment.'</p>';
 
             return $html;
         } catch (\Exception $e) {
