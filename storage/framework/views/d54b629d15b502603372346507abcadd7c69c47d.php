@@ -4,7 +4,8 @@
 <head>
     <title>Welcome to Artist</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -14,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('Frontend/css/slick.css')); ?>" />
     <link href="<?php echo e(asset('css/toastr.min.css')); ?>" rel="stylesheet">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script> -->
@@ -45,13 +46,44 @@
             position: absolute;
             top: 50%;
         }
-   
-#myHeader {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background:red;
-}
+
+        footer {
+        background-color: #555;
+        color: white;
+        padding: 15px;
+        }
+
+        .icon-size{
+        font-size:25px;
+        padding:5px;
+        color:#fff;
+        }
+        .footer-p{
+        padding:0px 25px;
+        }
+        .mt-10{
+            margin-top:10px;
+        } 
+        .logo{
+          height:80px !important;
+          width:80px !important;
+        }
+        #myNavbar{
+          height: 95px !important;
+        }
+        .navbar-inverse{
+          border-radius:0px;
+        }
+        @media  screen and (max-width:500px) {
+          .logo{
+            height:40px !important;
+            width :40px !important;
+          }
+          #myNavbar{
+          height: 45px !important;
+        }
+
+        }
     </style>
 
     <?php echo $__env->yieldContent('extra_css'); ?>
@@ -63,23 +95,30 @@
         <img src="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif"
             alt="processing..." />
     </div>
-    <section class="main-header" id = "myHeader">
-        <div class="">
-            <div class="header-top row"  style="margin:auto; display: inline-flex; width: 100%;">
-                <div class="logo col-lg-4" style="width: 100%!important;">
-                    <a href="<?php echo e(route('shop')); ?>">
-                        <img src="<?php echo e(asset('Frontend/images/artist_logo.png')); ?>" class="artist_logo">
-                    </a>
-                </div>
-             
-                <div class="col-lg-8">
-                    <ul class="nav navbar-nav navbar-center" style="float: right!important">
-                        <li class="active"><a href="<?php echo e(route('login')); ?>">Artist Login</a></li>
-                    </ul>
-                </div>
-            </div>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="<?php echo e(route('shop')); ?>" style="padding: 10px 15px">
+                <img src="<?php echo e(asset('Frontend/images/artist_logo.png')); ?>" class="artist_logo logo">
+            </a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <!-- <ul class="nav navbar-nav">
+              <li class="active"><a href="<?php echo e(route('shop')); ?>">Home</a></li>
+              <li><a href="#">Messages</a></li>
+            </ul> -->
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="<?php echo e(route('login')); ?>">Artist Login</a></li>
+            </ul>
+          </div>
         </div>
-    </section><!-- close header-->
-    
+      </nav>
+        
     <section class="main-section">
 <?php /**PATH D:\xampp\htdocs\artist_pro\resources\views/Frontend/layouts/header.blade.php ENDPATH**/ ?>

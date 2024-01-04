@@ -64,6 +64,26 @@
         .mt-10{
             margin-top:10px;
         } 
+        .logo{
+          height:80px !important;
+          width:80px !important;
+        }
+        #myNavbar{
+          height: 95px !important;
+        }
+        .navbar-inverse{
+          border-radius:0px;
+        }
+        @media screen and (max-width:500px) {
+          .logo{
+            height:40px !important;
+            width :40px !important;
+          }
+          #myNavbar{
+          height: 45px !important;
+        }
+
+        }
     </style>
 
     @yield('extra_css')
@@ -85,14 +105,14 @@
               <span class="icon-bar"></span>                        
             </button>
             <a class="navbar-brand" href="{{ route('shop') }}" style="padding: 10px 15px">
-                <img src="{{ asset('Frontend/images/artist_logo.png') }}" class="artist_logo">
+                <img src="{{ asset('Frontend/images/artist_logo.png') }}" class="artist_logo logo">
             </a>
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
+            <!-- <ul class="nav navbar-nav">
+              <li class="active"><a href="{{route('shop')}}">Home</a></li>
               <li><a href="#">Messages</a></li>
-            </ul>
+            </ul> -->
             <ul class="nav navbar-nav navbar-right">
               <li><a href="{{route('login')}}">Artist Login</a></li>
             </ul>

@@ -3,13 +3,14 @@
 
     <div class="sidebar-brand-text m-2 text-center text-white">
         <div class="text-center d-none d-md-inline">
-        <img src="{{ asset('Frontend/images/artist_logo.png') }}" class="artist_logo" style = "margin-right:10px; height:80px; width:80px;">{{ \Auth::user()->name }}
+        <img src="<?php echo e(asset('Frontend/images/artist_logo.png')); ?>" class="artist_logo" style = "margin-right:10px; height:80px; width:80px;"><?php echo e(\Auth::user()->name); ?>
+
             <!-- <button class="rounded-circle border-0" id="sidebarToggle"></button> -->
         </div>
     </div>
 
     <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ route('users.index') }}">
+        <a class="nav-link collapsed" href="<?php echo e(route('users.index')); ?>">
             <i class="fas fa-fw fa-user"></i>
             Users 
         </a>
@@ -20,4 +21,4 @@
             <span>Logout</span>
         </a>
     </li>
-</ul>
+</ul><?php /**PATH D:\xampp\htdocs\artist_pro\resources\views/layouts/sidebar.blade.php ENDPATH**/ ?>

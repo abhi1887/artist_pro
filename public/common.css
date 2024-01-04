@@ -21,19 +21,13 @@
     width:35px!important;
     height:30px!important;
 }
+.pt-8{
+    padding: 8px 0px 0px 0px;
+}
 
 .footer-copyrights {
-  background-color: #303030;
+  background-color: #000;
   color: #fff;
-  padding: 10px 0px;
   text-align: center;
 }
 
-footer {
-    clear: both;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #f1f1f1;
-    text-align: center;
-}

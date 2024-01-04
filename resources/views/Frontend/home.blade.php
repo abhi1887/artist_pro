@@ -1,13 +1,12 @@
 @extends('Frontend.layouts.front')
 
 @section('content')
-<div class="col-12 content ">
-    <div class="col-lg-12 col-md-12 col-sm-12 userData">
+<div class = "container userData">
     @if(count($users) > 0)
         @foreach ($users as $user)
         <div class="row">
             <div class="col-sm-5">
-                <div class="well text-center" style="height: 360px; overflow-y: auto;">
+                <div class="well text-center" style="height: 393px; overflow-y: auto;">
                     <img src="{{ asset('/user_images/' . $user->image) }}" alt="Avatar" class="img-circle" width="100" height="100">
                     <p><b>{{ $user->name }}</b></p>
                     <div class="text-justify">
@@ -36,7 +35,7 @@
         @endforeach
     @endif
     </div>
-</div>
+
 
 <script>
     $(document).on('click', '.saveComment', function(){

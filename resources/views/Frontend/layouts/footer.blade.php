@@ -38,8 +38,21 @@
        </span>
           </div>
    
-         </div></div>
+         </div>
+        </div>
+       
+         
    </footer>
+   <div class = "container-fluid">
+          <div class = "row text-center footer-copyrights">
+            <div class = "col-lg-6 pt-8">
+              <p > Copyright &copy 2024 All Rights Reserved</p>
+            </div>
+            <div class = "col-lg-6 pt-8" >
+              <p>Design and Developed by <a href="https://wizdomwebsolutions.com/">wizdomwebsolutions</a></p>
+            </div>
+          </div>
+        </div>
    
    
    
