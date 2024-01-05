@@ -1,7 +1,7 @@
 
 
 <?php $__env->startSection('content'); ?>
-<div class = "container userData">
+<div class = "container userData bg-color">
     <?php if(count($users) > 0): ?>
         <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="row">

@@ -1,4 +1,4 @@
-<footer class="container-fluid text-center">
+<footer class="container-fluid text-center navbar-inverse">
     <div class="container">
        <div class="row">
    

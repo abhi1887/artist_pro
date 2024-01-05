@@ -1,7 +1,7 @@
 @extends('Frontend.layouts.front')
 
 @section('content')
-<div class = "container userData">
+<div class = "container userData bg-color">
     @if(count($users) > 0)
         @foreach ($users as $user)
         <div class="row">
